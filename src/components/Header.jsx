@@ -9,7 +9,8 @@ const Header = () => {
     <>
       <div className={'sticky w-[100%] z-[999] top-0'}>
         <div
-          className="text-black bg-[#f6f6f6]"
+          // className="text-black bg-[#f6f6f6]"
+          className="text-black bg-[#7c96b1]"
           style={{
             display: 'flex',
             alignItems: 'center',
