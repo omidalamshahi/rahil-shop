@@ -5,8 +5,8 @@ const Shop = () => {
       title: 'Calendar 2026',
       priceNet: 33,
       vat: 0.19,
-      img: '/src/assets/art2.jpg',
-      link: 'YOUR_PAYMENT_LINK_1', // Stripe Payment Link or any checkout URL
+      img: '/src/assets/shop/kalender.jpg',
+      link: 'https://buy.stripe.com/test_eVq00i2HK51t4D051I0sU00', // Stripe Payment Link or any checkout URL
     },
     {
       id: 'painting-002',
@@ -111,6 +111,7 @@ const Shop = () => {
                       <a
                         href={item.link}
                         className="block text-center py-2 rounded-xl shadow-md font-semibold hover:opacity-90"
+                        target="_blank"
                       >
                         Buy now
                       </a>

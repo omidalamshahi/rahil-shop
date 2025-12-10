@@ -66,9 +66,10 @@ const PhotoSlider3 = ({ list = [], chosenIndex = 0, setShow = () => {} }) => {
   return (
     <>
       <div
+        className="photoslider"
         // className={classes['photo-slider-container']}
         style={{
-          height: isScrolled + 'px',
+          // height: isScrolled + 'px',
           // position: 'fixed',
           display: 'flex',
           flexDirection: 'row',
@@ -92,11 +93,11 @@ const PhotoSlider3 = ({ list = [], chosenIndex = 0, setShow = () => {} }) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            transform: 'translateY(-5%)',
+            // transform: 'translateY(-5%)',
 
             position: 'relative',
             width: '100%',
-            height: '100%',
+            // height: '100%',
           }}
         >
           <div
