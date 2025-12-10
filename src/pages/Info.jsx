@@ -1,4 +1,4 @@
-import rahil1 from '../assets/rahil1.1.jpg';
+import rahil1 from '../assets/rahil/rahil1.1.jpg';
 const Info = () => {
   return (
     <div className="flex flex-col">

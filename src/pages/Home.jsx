@@ -1,6 +1,6 @@
 import PhotoSlider3 from '../components/PhotoSlider/PhotoSlider3';
 import art1 from '../assets/art1.1.jpg';
-import rahil1 from '../assets/rahil1.1.jpg';
+import rahil1 from '../assets/rahil/rahil1.1.jpg';
 import art2 from '../assets/art2.jpg';
 import art3 from '../assets/art3.jpg';
 import art4 from '../assets/art4.jpg';
