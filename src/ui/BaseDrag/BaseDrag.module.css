@@ -1,0 +1,159 @@
+.base-drag__container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  /* display: flex; */
+  /* max-width: 100%; */
+  /* max-height: 100%; */
+  /* -ms-touch-action: none; */
+  /* touch-action: none; */
+}
+
+.base-drag__container::before {
+  content: '';
+  /* background-color: black; */
+  /* box-shadow: inset 20px 0 50px -40px red, inset -15px 0 15px -15px red; */
+  background-image: linear-gradient(
+    90deg,
+    rgb(0, 0, 0, 0.5) 0 10%,
+    transparent 90% 100%
+  );
+  position: absolute;
+  z-index: 3001;
+  width: 5%;
+  height: 100%;
+  pointer-events: none;
+}
+.base-drag__container::after {
+  content: '';
+  /* background-color: black; */
+  /* box-shadow: inset 20px 0 50px -40px red, inset -15px 0 15px -15px red; */
+  background-image: linear-gradient(
+    90deg,
+    transparent 0% 10%,
+    rgb(0, 0, 0, 0.5) 90% 100%
+  );
+
+  /* background-image: linear-gradient(
+    90deg,
+     0 10%,
+    transparent 90% 100%
+  ); */
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3001;
+  width: 5%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* .base-drag__container  * {
+  cursor: grab !important;
+} */
+
+.base-drag__children-wrapper {
+  display: flex;
+  overflow: auto;
+  /* scroll-behavior: smooth; */
+
+  gap: 0.3rem;
+  width: 100%;
+  height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.base-drag__children-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.base-drag__backdrop {
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+  z-index: -1;
+}
+.base-drag__backdrop__active {
+  opacity: 1;
+  z-index: 000;
+  /* cursor: move; */
+}
+
+.base-drag__scrollbar__container {
+  position: absolute;
+  border-radius: 10rem;
+  background-color: rgb(226, 226, 226, 0.5);
+}
+
+.base-drag__scrollbar-x__container {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.base-drag__scrollbar-y__container {
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+.base-drag__scrollbar {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgb(226, 226, 226, 0.5);
+  border-radius: 10rem;
+}
+
+.base-drag__scrollbar-x {
+  width: 2rem;
+  height: 100%;
+  transform: translateX(0px);
+}
+
+.base-drag__scrollbar-y {
+  height: 2rem;
+  width: 100%;
+  transform: translateY(0px);
+}
+
+.base-drag__scrollbar__hover-effect {
+  opacity: 0.3;
+  transition: all 0.2s ease-in-out;
+}
+.base-drag__container:active .base-drag__scrollbar__hover-effect,
+.base-drag__container:hover .base-drag__scrollbar__hover-effect {
+  opacity: 1;
+}
+
+/* .base-drag__Icon__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.base-drag__Icon {
+  user-select: none;
+
+  background: black;
+  border-radius: 10rem;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.base-drag__Icon-x {
+  width: min(50px, 30%);
+  height: min(30px, 70%);
+}
+.base-drag__Icon-y {
+  width: min(30px, 70%);
+  height: min(50px, 70%);
+} */
