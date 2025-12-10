@@ -79,8 +79,9 @@ const PhotoSlider3 = ({ list = [], chosenIndex = 0, setShow = () => {} }) => {
           // zIndex: '2001',
           top: '0',
           left: '0',
-          width: '100%',
+          width: '90vw',
           // height: '100vh',
+          marginBottom: '2rem',
         }}
       >
         <div
@@ -102,7 +103,11 @@ const PhotoSlider3 = ({ list = [], chosenIndex = 0, setShow = () => {} }) => {
         >
           <div
             // className={classes['photo-slider_img-warper']}
-            style={{ display: 'flex', justifyContent: 'center' }}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              height: '80vh',
+            }}
           >
             <img
               // className={classes['photo-slider_img']}
@@ -110,10 +115,12 @@ const PhotoSlider3 = ({ list = [], chosenIndex = 0, setShow = () => {} }) => {
               // src='https://platinumlist.net/guide/wp-content/uploads/2023/03/IMG-worlds-of-adventure.webp'
               alt=""
               style={{
-                maxHeight: isScrolled - isScrolled / 10 + 'px',
-                maxWidth: '85%',
+                // maxHeight: isScrolled - isScrolled / 10 + 'px',
+                // maxWidth: '85%',
                 // width: '90%',
                 userSelect: 'none',
+                // height: '80vh',
+                height: '100%',
               }}
             />
           </div>
@@ -140,11 +147,15 @@ const PhotoSlider3 = ({ list = [], chosenIndex = 0, setShow = () => {} }) => {
                 width: '15%',
                 height: '3rem',
               }}
+              style={{
+                color: '#989898',
+              }}
             />
           </div>
           <div
-            onClick={() => {
+            onClick={(e) => {
               // changeIndex(curIndex + 1);
+              e.preventDefault();
               changeCurIndex({ type: ACTIONS.INC });
             }}
             className={cx(
@@ -167,6 +178,9 @@ const PhotoSlider3 = ({ list = [], chosenIndex = 0, setShow = () => {} }) => {
               svgContainerStyle={{
                 width: '15%',
                 height: '3rem',
+              }}
+              style={{
+                color: '#989898',
               }}
             />
           </div>

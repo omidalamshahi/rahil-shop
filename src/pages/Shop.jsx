@@ -1,3 +1,14 @@
+import imgShop1 from '../assets/shop/kalender.jpg';
+import imgShop2 from '../assets/shop/Mousse au chocolat.jpg';
+import imgShop3 from '../assets/shop/Tomate Mozzarella.jpg';
+import imgShop4 from '../assets/shop/Veggie Döner.jpg';
+import imgShop5 from '../assets/shop/Still Here Still Life, Week 115.jpg';
+import imgShop6 from '../assets/shop/Anjir, Feige.jpg';
+import imgShop7 from '../assets/shop/Kiwiorange.jpg';
+import imgShop8 from '../assets/shop/Kürbise.jpg';
+import imgShop9 from '../assets/shop/Chinapfanne.jpg';
+import imgShop10 from '../assets/shop/Feta Minze.jpg';
+
 const Shop = () => {
   const items = [
     {
@@ -5,15 +16,15 @@ const Shop = () => {
       title: 'Calendar 2026',
       priceNet: 33,
       vat: 0.19,
-      img: '/src/assets/shop/kalender.jpg',
-      link: 'https://buy.stripe.com/test_eVq00i2HK51t4D051I0sU00', // Stripe Payment Link or any checkout URL
+      img: imgShop1,
+      link: 'https://buy.stripe.com/test_00w3co8g71PO3KU6pYaAw00?quantity=5', // Stripe Payment Link or any checkout URL
     },
     {
       id: 'painting-002',
       title: 'Mousse au chocolat',
       priceNet: 60,
       vat: 0.19,
-      img: '/src/assets/shop/Mousse au chocolat.jpg',
+      img: imgShop2,
       link: 'YOUR_PAYMENT_LINK_2',
     },
     {
@@ -21,7 +32,7 @@ const Shop = () => {
       title: 'Tomate Mozzarella',
       priceNet: 60,
       vat: 0.19,
-      img: '/src/assets/shop/Tomate Mozzarella.jpg',
+      img: imgShop3,
       link: 'YOUR_PAYMENT_LINK_3',
     },
     {
@@ -29,7 +40,7 @@ const Shop = () => {
       title: 'Veggie Döner',
       priceNet: 38,
       vat: 0.19,
-      img: '/src/assets/shop/Veggie Döner.jpg',
+      img: imgShop4,
       link: 'YOUR_PAYMENT_LINK_3',
     },
     {
@@ -37,7 +48,7 @@ const Shop = () => {
       title: 'Still Here Still Life, Week 115',
       priceNet: 60,
       vat: 0.19,
-      img: '/src/assets/shop/Still Here Still Life, Week 115.jpg',
+      img: imgShop5,
       link: 'YOUR_PAYMENT_LINK_3',
     },
     {
@@ -45,7 +56,7 @@ const Shop = () => {
       title: 'Anjir, Feige',
       priceNet: 38,
       vat: 0.19,
-      img: '/src/assets/shop/Anjir, Feige.jpg',
+      img: imgShop6,
       link: 'YOUR_PAYMENT_LINK_3',
     },
     {
@@ -53,7 +64,7 @@ const Shop = () => {
       title: 'Kiwiorange',
       priceNet: 38,
       vat: 0.19,
-      img: '/src/assets/shop/Kiwiorange.jpg',
+      img: imgShop7,
       link: 'YOUR_PAYMENT_LINK_3',
     },
     {
@@ -61,7 +72,7 @@ const Shop = () => {
       title: 'Kürbise',
       priceNet: 38,
       vat: 0.19,
-      img: '/src/assets/shop/Kürbise.jpg',
+      img: imgShop8,
       link: 'YOUR_PAYMENT_LINK_3',
     },
     {
@@ -69,7 +80,7 @@ const Shop = () => {
       title: 'Chinapfanne',
       priceNet: 38,
       vat: 0.19,
-      img: '/src/assets/shop/Chinapfanne.jpg',
+      img: imgShop9,
       link: 'YOUR_PAYMENT_LINK_3',
     },
     {
@@ -77,7 +88,7 @@ const Shop = () => {
       title: 'Feta Minze',
       priceNet: 38,
       vat: 0.19,
-      img: '/src/assets/shop/Feta Minze.jpg',
+      img: imgShop10,
       link: 'YOUR_PAYMENT_LINK_3',
     },
   ];
@@ -92,7 +103,7 @@ const Shop = () => {
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col"
+                className="bg-white rounded-[5px] shadow-md overflow-hidden flex flex-col"
               >
                 <img
                   src={item.img}
@@ -110,7 +121,7 @@ const Shop = () => {
                     {item.link && item.link !== 'YOUR_PAYMENT_LINK_1' ? (
                       <a
                         href={item.link}
-                        className="block text-center py-2 rounded-xl shadow-md font-semibold hover:opacity-90"
+                        className="bg-[#ffc1c1] block text-center py-2 rounded-[5px] shadow-md font-semibold hover:opacity-90"
                         target="_blank"
                       >
                         Buy now
@@ -120,7 +131,7 @@ const Shop = () => {
                         onClick={() =>
                           alert('Set your payment link for ' + item.title)
                         }
-                        className="w-full py-2 rounded-xl shadow-md font-semibold hover:opacity-90"
+                        className="w-full py-2 rounded-[5px] shadow-md font-semibold hover:opacity-90"
                       >
                         Buy now
                       </button>

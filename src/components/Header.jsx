@@ -22,14 +22,17 @@ const Header = () => {
             color: 'rgb(0, 0, 0)',
             letterSpacing: '0.1rem',
             textTransform: 'uppercase',
+            userSelect: 'none',
           }}
         >
           <div
-            style={{
-              // fontWeight: '500',
-              // fontSize: '14px',
-              // color: 'rgb(75, 75, 75)',
-            }}
+            style={
+              {
+                // fontWeight: '500',
+                // fontSize: '14px',
+                // color: 'rgb(75, 75, 75)',
+              }
+            }
           >
             <Link to="/">PORTFOLIO</Link>
           </div>

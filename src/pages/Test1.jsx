@@ -1,37 +1,39 @@
-import { useState } from 'react';
-import PhotoSlider3 from '../components/PhotoSlider/PhotoSlider3';
+import { useState } from "react";
 
-const Test1 = () => {
-  const [showPhotoSlider, setShowPhotoSlider] = useState(false);
+function Test1() {
+  const [quantity, setQuantity] = useState(1);
+
+  const handleCheckout = async () => {
+    const res = await fetch(`/api/create-checkout-session?qty=${quantity}`, {
+      method: "POST",
+    });
+    const data = await res.json();
+    window.location.href = data.url; // redirect to Stripe Checkout
+  };
+
   return (
-    <div>
-      {showPhotoSlider && (
-        <PhotoSlider3
-          setShow={setShowPhotoSlider}
-          list={[
-            '/src/assets/rahil1.jpg',
-            '/src/assets/art1.1.jpg',
-            '/src/assets/art2.jpg',
-            '/src/assets/art3.jpg',
-            '/src/assets/art4.jpg',
-            '/src/assets/art5.jpg',
-            '/src/assets/art6.jpg',
-            // '/src/assets/art1.1.jpg',
-            // '/src/assets/rahil1.jpg',
-            // '/src/assets/art1.1.jpg',
-            // '/src/assets/rahil1.jpg',
-            // '/src/assets/art1.1.jpg',
-          ]}
+    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
+      <h1>Buy Product</h1>
+      <label>
+        Quantity:
+        <input
+          type="number"
+          min="1"
+          max="99"
+          value={quantity}
+          onChange={(e) => setQuantity(Number(e.target.value))}
+          style={{ marginLeft: "0.5rem", width: "50px" }}
         />
-      )}
+      </label>
       <button
-        onClick={() => {
-          setShowPhotoSlider(true);
-        }}
+        onClick={handleCheckout}
+        style={{ marginLeft: "1rem", padding: "0.5rem 1rem" }}
       >
-        show
+        Checkout
       </button>
     </div>
   );
-};
+}
+
 export default Test1;
+

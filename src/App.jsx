@@ -52,12 +52,15 @@ import Header from './components/Header.jsx';
 import Shop from './pages/Shop.jsx';
 import Test1 from './pages/Test1.jsx';
 import Test2 from './pages/Test2.jsx';
+import Info from './pages/Info.jsx';
+import Footer from './components/Footer.jsx';
 
 const AppLayout = ({ children }) => {
   return (
     <>
       <Header />
       {children}
+      <Footer />
     </>
   );
 };
@@ -81,7 +84,7 @@ const router = createBrowserRouter(
         },
         {
           path: '/info',
-          element: <Shop />,
+          element: <Info />,
         },
         {
           path: '/test1',
