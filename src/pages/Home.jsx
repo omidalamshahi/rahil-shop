@@ -1,6 +1,6 @@
 import PhotoSlider3 from '../components/PhotoSlider/PhotoSlider3';
 import art1 from '../assets/art1.1.jpg';
-import rahil1 from '../assets/rahil1.1.jpg';
+import rahil1 from '../assets/Rahil1.1.jpg';
 import art2 from '../assets/art2.jpg';
 import art3 from '../assets/art3.jpg';
 import art4 from '../assets/art4.jpg';
@@ -37,20 +37,12 @@ const Home = () => {
       <div>
         <PhotoSlider3
           list={[
-            // rahil1,
             art1,
             art2,
             art3,
             art4,
             art5,
             art6,
-            // '/src/assets/rahil1.jpg',
-            // '/src/assets/art1.1.jpg',
-            // '/src/assets/art2.jpg',
-            // '/src/assets/art3.jpg',
-            // '/src/assets/art4.jpg',
-            // '/src/assets/art5.jpg',
-            // '/src/assets/art6.jpg',
           ]}
         />
       </div>
