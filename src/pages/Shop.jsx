@@ -95,6 +95,10 @@ const Shop = () => {
   ];
 
   const addToCart = (data) => {
+    alert(`
+      Dast Nazan...
+      Hanoz Amade nist! :)
+      `)
     return;
     const oldCart = localStorage.getItem('cart');
     const newItem = {
