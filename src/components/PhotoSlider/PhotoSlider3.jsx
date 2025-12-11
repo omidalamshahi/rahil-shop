@@ -120,8 +120,9 @@ const PhotoSlider3 = ({ list = [], chosenIndex = 0, setShow = () => {} }) => {
                 // width: '90%',
                 userSelect: 'none',
                 // height: '80vh',
-                height: '100%',
+                width: '100%',
               }}
+              className='object-cover'
             />
           </div>
 

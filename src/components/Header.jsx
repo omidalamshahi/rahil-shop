@@ -9,8 +9,8 @@ const Header = () => {
     <>
       <div className={'sticky w-[100%] z-[999] top-0'}>
         <div
-          // className="text-black bg-[#f6f6f6]"
-          className="text-black bg-[#7c96b1]"
+          className="text-black bg-[#f6f6f6]"
+          // className="text-black bg-[#7c96b1]"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -29,7 +29,7 @@ const Header = () => {
           <div
             style={
               {
-                // fontWeight: '500',
+              // fontWeight: '500',
                 // fontSize: '14px',
                 // color: 'rgb(75, 75, 75)',
               }
@@ -43,12 +43,12 @@ const Header = () => {
           <div>
             <Link to="/info">INFO</Link>
           </div>
-          <div>
+          {/* <div>
             <Link to="/test1">Test1</Link>
           </div>
           <div>
             <Link to="/test2">Test2</Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
