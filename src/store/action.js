@@ -49,3 +49,15 @@ export const removeCartItemAction = (productId) => {
     }
   };
 };
+export const clearCartAction = () => {
+  console.log('clearCart-action');
+  return async (dispatch) => {
+    dispatch(shopMutation.cartStart());
+    try {
+      dispatch(shopMutation.clearCartSuccess());
+    } catch (error) {
+      const errorMessage = error?.message;
+      dispatch(shopMutation.cartFailure({ errorMessage }));
+    }
+  };
+};

@@ -1,11 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import SvgContainer from '../../ui/SvgContainer';
 import { addToCartAction, removeCartItemAction } from '../../store/action';
+import PhotoSliderSmall from '../../components/PhotoSlider/PhotoSliderSmall';
 
 // fix
 const itemInventory = 20;
 
 const ShopItem = ({ item }) => {
+  console.log(item);
+
   const dispatch = useDispatch();
   const itemCartQuantity =
     useSelector((state) => state.shop.cart?.data[item.id])?.quantity || 0;
@@ -45,10 +48,11 @@ const ShopItem = ({ item }) => {
       className="bg-white rounded-[5px] shadow-md overflow-hidden flex flex-col"
     >
       <img
-        src={item.img}
+        src={item.imgList[0]}
         alt={item.title}
         className="w-full h-130 object-cover"
       />
+      {/* <PhotoSliderSmall imgList={item.imgList} /> */}
       <div className="p-4 flex flex-col">
         <h2 className="text-xl font-semibold">{item.title}</h2>
         <div className="mt-2 text-gray-700">

@@ -46,7 +46,7 @@ const Cart = ({ setShow }) => {
           quantity: item.quantity,
         };
       })
-      .filter(Boolean); 
+      .filter(Boolean);
     if (readyCart.length === 0) return;
     const res = await fetch('/api/create-checkout-session', {
       method: 'POST',
@@ -79,8 +79,8 @@ const Cart = ({ setShow }) => {
   };
   return (
     <div
-      className="fixed flex flex-col w-120 max-w-[80vw] right-0 z-1000 bg-[#e6e6e6e2] shadow-md max-h-[calc(100vh-3rem)] px-4 py-2 gap-2 overflow-auto mt-2 rounded-[5px]"
-      // style={{ backdropFilter: 'blur(1px)' }}
+      className="fixed flex flex-col w-120 max-w-[90vw] right-0 z-1000 bg-[#f1f1f1e9] shadow-md max-h-[calc(100vh-3rem)] px-4 py-2 gap-2 overflow-auto mt-2 rounded-[5px]"
+      // style={{ backdropFilter: 'blur(5px)' }}
     >
       <button
         className="absolute top-2 right-2 bg-[#ff6a6a] rounded-[5px]"
@@ -96,10 +96,10 @@ const Cart = ({ setShow }) => {
           return (
             <div
               key={id}
-              className="bg-white rounded-[5px] overflow-hidden p-4 flex gap-4"
+              className="bg-[#ffffffdc] rounded-[5px] overflow-hidden p-4 flex gap-4"
             >
               <img
-                src={item.img}
+                src={item.imgList[0]}
                 alt={item.title}
                 className="w-25 h-35 object-contain"
               />
@@ -109,13 +109,11 @@ const Cart = ({ setShow }) => {
                     <h2 className="text-xl font-semibold">{item.title}</h2>
                     <div className="mt-2 text-gray-700">
                       €{item.priceNet.toFixed(2)}
-                      <span className="text-sm text-gray-500">
-                        (+ shipping)
-                      </span>
                     </div>
                   </div>
                 </div>
-                <div className="p-4 pt-4 flex justify-end gap-5 select-none">
+                {/* <div className="p-4 pt-4 flex justify-end gap-5 select-none "> */}
+                <div className="p-4 pt-4 ml-auto flex flex-wrap gap-5 select-none">
                   <div className="flex items-center gap-0 py-2 text-center ">
                     <button
                       className="bg-[#eeeeee] rounded-[5px] p-0.5"
@@ -158,18 +156,19 @@ const Cart = ({ setShow }) => {
           );
         })}
       </div>
-      <div className="flex flex-col items-center gap-3 p-4 mx-2 ">
+      <div className="flex items-center justify-around gap-3 p-4 mx-2">
         <div className="font-semibold">
           <span>Total: </span>
           <span>€</span>
           <span>{cartTotal}</span>
+          <span className="text-sm text-gray-500"> (+ shipping)</span>
         </div>
         <button
           onClick={checkout}
           className="flex gap-2 bg-[#87e098] px-4 py-2 rounded-[5px] font-semibold hover:opacity-90"
         >
           <SvgContainer icon={'Checkout'} size={'1.2rem'} />
-          <span>checkout</span>
+          <span className="">Checkout</span>
         </button>
       </div>
     </div>

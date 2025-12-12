@@ -1,42 +1,35 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
 //fix this plzzz
 import imgShop1 from '../assets/shop/kalender.jpg';
 import imgShop2 from '../assets/shop/Mousse au chocolat.jpg';
 import imgShop3 from '../assets/shop/Tomate Mozzarella.jpg';
 import imgShop4 from '../assets/shop/Veggie Döner.jpg';
+
 const tempProducts = {
   'painting-001': {
-    // id: 'painting-001',
     title: 'Calendar 2026',
     priceNet: 33,
-    vat: 0.19,
     img: imgShop1,
+    imgList: [imgShop1, imgShop2, imgShop3, imgShop4],
     stripe: 'price_1ScxEd5SqYSXvBNRX6FqJOuP',
   },
   'painting-002': {
-    // id: 'painting-002',
     title: 'Mousse au chocolat',
     priceNet: 60,
-    vat: 0.19,
-    img: imgShop2,
+    imgList: [imgShop2],
     stripe: 'price_1ScxGs5SqYSXvBNRaN4KaikV',
   },
   'painting-003': {
-    // id: 'painting-003',
     title: 'Tomate Mozzarella',
     priceNet: 60,
-    vat: 0.19,
-    img: imgShop3,
+    imgList: [imgShop3],
     stripe: 'price_1ScxHq5SqYSXvBNRkOILgpj7',
   },
   'painting-004': {
-    // id: 'painting-004',
     title: 'Veggie Döner',
     priceNet: 38,
-    vat: 0.19,
-    img: imgShop4,
+    imgList: [imgShop4],
     stripe: 'price_1ScxIg5SqYSXvBNRbP9Jwwqp',
   },
 };
@@ -86,6 +79,10 @@ const shopReducer = createSlice({
       const { [id]: _, ...newCart } = oldCart;
       state.cart.data = newCart;
       localStorage.setItem('cart', JSON.stringify(newCart));
+    },
+    clearCartSuccess(state) {
+      state.cart.data = {};
+      localStorage.removeItem('cart');
     },
   },
 });

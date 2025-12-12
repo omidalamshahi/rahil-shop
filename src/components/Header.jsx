@@ -40,15 +40,15 @@ const Header = () => {
         >
           <div className="flex-1"></div>
           <div className="flex-5 flex justify-center gap-8">
-            <div>
+            {/* <div>
               <Link to="/">PORTFOLIO</Link>
-            </div>
+            </div> */}
             <div>
               <Link to="/shop">SHOP</Link>
             </div>
-            <div>
+            {/* <div>
               <Link to="/info">INFO</Link>
-            </div>
+            </div> */}
           </div>
 
           <button
