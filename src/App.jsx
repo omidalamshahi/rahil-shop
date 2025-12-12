@@ -14,8 +14,6 @@ import './App.css';
 import Home from './pages/Home.jsx';
 import Header from './components/Header.jsx';
 import Shop from './pages/Shop.jsx';
-import Test1 from '../zRemoved/Test1.jsx';
-import Test2 from '../zRemoved/Test2.jsx';
 import Info from './pages/Info.jsx';
 import Footer from './components/Footer.jsx';
 import SuccessPage from './pages/redirects/SuccessPage.jsx';
