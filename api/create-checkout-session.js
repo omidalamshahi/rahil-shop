@@ -1,38 +1,58 @@
-import Stripe from 'stripe';
+// import Stripe from 'stripe';
+
+// const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+// export default async function handler(req, res) {
+//   try {
+//     const quantity = parseInt(req.query.qty || '1', 10);
+
+//     const session = await stripe.checkout.sessions.create({
+//       mode: 'payment',
+//       line_items: [
+//         {
+//           price: 'price_1ScotK5SqYSXvBNRC2Dq9MiP',
+//           quantity: 1,
+//         },
+//         {
+//           price: 'price_1Scop15SqYSXvBNRc3tMRt24',
+//           quantity: 2,
+//         },
+
+//       ],
+
+//       success_url: `${req.headers.origin}/success`,
+//       cancel_url: `${req.headers.origin}/cancel`,
+//     });
+
+//     return res.status(200).json({ url: session.url });
+//   } catch (err) {
+//     console.error(err);
+//     return res.status(500).json({ error: err.message });
+//   }
+// }
+
+import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
   try {
-    const quantity = parseInt(req.query.qty || '1', 10);
+    const { items } = req.body;
+
+    const line_items = items.map(item => ({
+      price: item.priceId,
+      quantity: item.quantity,
+    }));
 
     const session = await stripe.checkout.sessions.create({
-      mode: 'payment',
-      // line_items: [
-      //   {
-      //     price: 'price_1ScotK5SqYSXvBNRC2Dq9MiP', // <-- YOUR REAL PRICE ID
-      //     quantity,
-      //   },
-      // ],
-      line_items: [
-        {
-          price: 'price_1ScotK5SqYSXvBNRC2Dq9MiP',
-          quantity: 1,
-        },
-        {
-          price: 'price_1Scop15SqYSXvBNRc3tMRt24',
-          quantity: 2,
-        },
-
-      ],
-
+      mode: "payment",
+      line_items,
       success_url: `${req.headers.origin}/success`,
       cancel_url: `${req.headers.origin}/cancel`,
     });
 
     return res.status(200).json({ url: session.url });
   } catch (err) {
-    console.error(err);
     return res.status(500).json({ error: err.message });
   }
 }

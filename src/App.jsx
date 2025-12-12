@@ -1,39 +1,3 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-
-// export default App
-
 import { useEffect, useState } from 'react';
 import {
   RouterProvider,
@@ -50,16 +14,27 @@ import './App.css';
 import Home from './pages/Home.jsx';
 import Header from './components/Header.jsx';
 import Shop from './pages/Shop.jsx';
-import Test1 from './pages/Test1.jsx';
-import Test2 from './pages/Test2.jsx';
+import Test1 from '../zRemoved/Test1.jsx';
+import Test2 from '../zRemoved/Test2.jsx';
 import Info from './pages/Info.jsx';
 import Footer from './components/Footer.jsx';
+import SuccessPage from './pages/redirects/SuccessPage.jsx';
+import CancelPage from './pages/redirects/CancelPage.jsx';
+import NotFoundPage from './pages/redirects/NotFoundPage.jsx';
+
+import { useDispatch } from 'react-redux';
+import { getCartAction } from './store/action.js';
 
 const AppLayout = ({ children }) => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCartAction());
+  }, []);
+
   return (
     <>
       <Header />
-      {children}
+      <div className="min-h-[calc(100vh-4.8rem)]">{children}</div>
       <Footer />
     </>
   );
@@ -87,12 +62,16 @@ const router = createBrowserRouter(
           element: <Info />,
         },
         {
-          path: '/test1',
-          element: <Test1 />,
+          path: '/success',
+          element: <SuccessPage />,
         },
         {
-          path: '/test2',
-          element: <Test2 />,
+          path: '/cancel',
+          element: <CancelPage />,
+        },
+        {
+          path: '*',
+          element: <NotFoundPage />,
         },
       ],
     },

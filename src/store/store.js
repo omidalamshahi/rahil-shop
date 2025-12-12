@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import shopSlice from './steam/reducer';
+import shopSlice from './reducer';
 
 const store = configureStore({
   reducer: {

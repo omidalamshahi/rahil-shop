@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useRef, useState } from 'react';
-import classes from './PhotoSlider3.module.css';
+import classes from './PhotoSlider.module.css';
 import cx from 'classnames';
 import SvgContainer from '../../ui/SvgContainer';
 import BaseDrag from '../../ui/BaseDrag';
@@ -76,7 +76,7 @@ const PhotoSlider3 = ({ list = [], chosenIndex = 0, setShow = () => {} }) => {
           alignItems: 'center',
           justifyContent: 'center',
 
-          // zIndex: '2001',
+          // zIndex: '201',
           top: '0',
           left: '0',
           width: '90vw',
@@ -90,7 +90,7 @@ const PhotoSlider3 = ({ list = [], chosenIndex = 0, setShow = () => {} }) => {
             classes['middle']
           )}
           style={{
-            zIndex: '2001',
+            zIndex: '201',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -189,7 +189,7 @@ const PhotoSlider3 = ({ list = [], chosenIndex = 0, setShow = () => {} }) => {
         {/* <div
           style={{
             position: 'fixed',
-            zIndex: '3000',
+            zIndex: '300',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
