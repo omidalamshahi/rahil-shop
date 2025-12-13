@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 //style
 import cx from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
-import SvgContainer from '../ui/SvgContainer';
+import SvgContainer from './ui/SvgContainer';
 import Cart from '../pages/Cart';
 import PopUp from '../components/layouts/PopUp';
 
@@ -42,13 +42,16 @@ const Header = () => {
           <div className="flex-5 flex justify-center gap-8">
             {/* <div>
               <Link to="/">PORTFOLIO</Link>
-            </div> */}
+            </div>
             <div>
               <Link to="/shop">SHOP</Link>
             </div>
-            {/* <div>
+            <div>
               <Link to="/info">INFO</Link>
             </div> */}
+                        <div>
+              <Link to="/">Rahil Alamshahi</Link>
+            </div>
           </div>
 
           <button

@@ -1,8 +1,8 @@
 import { useEffect, useReducer, useRef, useState } from 'react';
 import classes from './PhotoSlider.module.css';
 import cx from 'classnames';
-import SvgContainer from '../../ui/SvgContainer';
-import BaseDrag from '../../ui/BaseDrag';
+import SvgContainer from '../ui/SvgContainer';
+import BaseDrag from '../ui/BaseDrag';
 
 const ACTIONS = {
   INC: 'increment',

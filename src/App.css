@@ -79,7 +79,7 @@ picture
 
   .backdrop {
     position: fixed;
-    z-index: 20;
+    /* z-index: 20; */
     width: 100vw;
     height: 100vh;
     top: 0;

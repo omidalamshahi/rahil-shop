@@ -7,14 +7,7 @@ const ACTIONS = {
   JMP: 'jump',
 };
 
-const PhotoSliderSmall = ({
-  imgList,
-  imgListSmall,
-  startingIndex = 0,
-  onImageClick,
-}) => {
-  console.log(imgList);
-  console.log(imgListSmall);
+const PhotoSlider2 = ({ imgList, startingIndex = 0 }) => {
   const changeIndex = (state, action) => {
     switch (action.type) {
       case ACTIONS.INC:
@@ -29,17 +22,32 @@ const PhotoSliderSmall = ({
   };
   const [curIndex, changeCurIndex] = useReducer(changeIndex, startingIndex);
   return (
-    <div className="group relative overflow-hidden">
-      <img
+    <div className="group relative overflow-auto flex flex-col gap-5">
+      {/* <img
         src={imgList[curIndex]}
-        className="w-full h-130 object-cover m-auto"
-        onClick={() => {
-          onImageClick(curIndex);
-        }}
-      />
-      {Object.keys(imgList).length > 0 && (
+        className="w-full h-[80%] object-cover m-auto"
+      /> */}
+      {/* {Object.keys(imgList).length > 1 && (
         <>
-          {/* <div
+          <img
+            src={imgList[curIndex]}
+            className="w-full h-[80%] object-cover m-auto"
+          />
+        </>
+      )} */}
+
+      {imgList.map((item, index) => {
+        return (
+          <img
+            src={item}
+            className="w-full h-[80%] object-cover m-auto"
+          />
+        );
+      })}
+
+      {Object.keys(imgList).length > 1 && (
+        <div>
+          <div
             className="absolute top-0 left-0 text-[#f7f7f7] w-[50%] h-full flex items-center justify-start z-202 cursor-pointer"
             onClick={() => {
               changeCurIndex({ type: ACTIONS.DEC });
@@ -63,22 +71,20 @@ const PhotoSliderSmall = ({
               size="3rem"
               className={'bg-[#00000036] rounded-[5px]'}
             />
-          </div> */}
+          </div>
 
           <div
             id="slider"
-            className="flex justify-center items-center w-full bottom-0  transition-all duration-300 bg-[#ffffffb0] p-2 
-            gap-1
-            group-hover:opacity-100 group-hover:translate-y-0 z-203
+            className="flex justify-center items-center w-full bottom-0  transition-all duration-300 bg-[#000000b0] p-2 z-203
             "
           >
-            {imgListSmall.map((item, index) => {
+            {imgList.map((item, index) => {
               return (
                 <img
                   src={item}
-                  className="w-10 h-10 object-contain cursor-pointer"
+                  className="w-20 h-20 object-cover"
                   style={{
-                    opacity: curIndex === index ? '100%' : '80%',
+                    opacity: curIndex === index ? '100%' : '50%',
                   }}
                   onClick={() => {
                     changeCurIndex({ type: ACTIONS.JMP, payload: index });
@@ -87,9 +93,9 @@ const PhotoSliderSmall = ({
               );
             })}
           </div>
-        </>
+        </div>
       )}
     </div>
   );
 };
-export default PhotoSliderSmall;
+export default PhotoSlider2;

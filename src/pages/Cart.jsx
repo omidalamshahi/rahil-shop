@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { addToCartAction, removeCartItemAction } from '../store/action';
 
 //components
-import SvgContainer from '../ui/SvgContainer';
+import SvgContainer from '../components/ui/SvgContainer';
 
 // fix
 const itemInventory = 20;
@@ -24,7 +24,7 @@ const Cart = ({ setShow }) => {
   useEffect(() => {
     let total = 0;
     Object.keys(cart).forEach((itemId) => {
-      const itemPrice = products[itemId].priceNet;
+      const itemPrice = products[itemId].price;
       const itemQuantity = cart[itemId].quantity;
       total += itemQuantity * itemPrice;
     });
@@ -108,7 +108,7 @@ const Cart = ({ setShow }) => {
                   <div>
                     <h2 className="text-xl font-semibold">{item.title}</h2>
                     <div className="mt-2 text-gray-700">
-                      €{item.priceNet.toFixed(2)}
+                      €{item.price.toFixed(2)}
                     </div>
                   </div>
                 </div>
@@ -145,7 +145,8 @@ const Cart = ({ setShow }) => {
                     onClick={() => {
                       removeFromCart(id);
                     }}
-                    className="flex items-center gap-2 bg-[#ffebeb] text-center px-2 py-2 rounded-[5px] font-semibold hover:opacity-90 text-[0.8rem]"
+                    className="flex items-center gap-2 bg-[#ffffff] text-center px-2 py-2 font-semibold hover:opacity-90 text-[0.8rem]"
+                    style={{ border: '1px solid black' }}
                   >
                     <SvgContainer icon={'CartRemove'} size={'1rem'} />
                     <span>Remove</span>
@@ -165,7 +166,7 @@ const Cart = ({ setShow }) => {
         </div>
         <button
           onClick={checkout}
-          className="flex gap-2 bg-[#87e098] px-4 py-2 rounded-[5px] font-semibold hover:opacity-90"
+          className="flex gap-2 bg-[#ffffff] px-4 py-2 rounded-[5px] font-semibold hover:opacity-90"
         >
           <SvgContainer icon={'Checkout'} size={'1.2rem'} />
           <span className="">Checkout</span>

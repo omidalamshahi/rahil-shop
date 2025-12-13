@@ -1,35 +1,63 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 //fix this plzzz
-import imgShop1 from '../assets/shop/kalender.jpg';
-import imgShop2 from '../assets/shop/Mousse au chocolat.jpg';
-import imgShop3 from '../assets/shop/Tomate Mozzarella.jpg';
-import imgShop4 from '../assets/shop/Veggie Döner.jpg';
+import.meta.glob('../assets/Images/*.{jpg,jpeg,png,webp,avif}', {
+  eager: true,
+});
+const Kalender = import.meta.glob(
+  '../assets/Images/Kalender/*.{jpg,jpeg,png,webp,avif}',
+  {
+    eager: true,
+  }
+);
+const KalenderSmall = import.meta.glob(
+  '../assets/Images/Kalender/small/*.{jpg,jpeg,png,webp,avif}',
+  {
+    eager: true,
+  }
+);
+import.meta.glob('../assets/Images/shop/*.{jpg,jpeg,png,webp,avif}', {
+  eager: true,
+});
+import.meta.glob('../assets/Images/rahil/*.{jpg,jpeg,png,webp,avif}', {
+  eager: true,
+});
+
+import imgShop2 from '../assets/Images/shop/Mousse au chocolat.jpg';
+import imgShop3 from '../assets/Images/shop/Tomate Mozzarella.jpg';
+import imgShop4 from '../assets/Images/shop/Veggie Döner.jpg';
 
 const tempProducts = {
   'painting-001': {
     title: 'Calendar 2026',
-    priceNet: 33,
-    img: imgShop1,
-    imgList: [imgShop1, imgShop2, imgShop3, imgShop4],
+    price: 33,
+    detail: `
+    Details:
+    Printed on 250g paper
+    Edition of 50, each signed`,
+    imgList: Object.values(Kalender).map((item) => item.default),
+    imgListSmall: Object.values(KalenderSmall).map((item) => item.default),
     stripe: 'price_1ScxEd5SqYSXvBNRX6FqJOuP',
   },
   'painting-002': {
     title: 'Mousse au chocolat',
-    priceNet: 60,
+    price: 60,
     imgList: [imgShop2],
+    imgListSmall: [],
     stripe: 'price_1ScxGs5SqYSXvBNRaN4KaikV',
   },
   'painting-003': {
     title: 'Tomate Mozzarella',
-    priceNet: 60,
+    price: 60,
     imgList: [imgShop3],
+    imgListSmall: [],
     stripe: 'price_1ScxHq5SqYSXvBNRkOILgpj7',
   },
   'painting-004': {
     title: 'Veggie Döner',
-    priceNet: 38,
+    price: 38,
     imgList: [imgShop4],
+    imgListSmall: [],
     stripe: 'price_1ScxIg5SqYSXvBNRbP9Jwwqp',
   },
 };

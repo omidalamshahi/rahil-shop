@@ -52,26 +52,26 @@ const router = createBrowserRouter(
           // element: <Home />,
           element: <Shop />,
         },
-        {
-          path: '/shop',
-          element: <Shop />,
-        },
+        // {
+        //   path: '/shop',
+        //   element: <Shop />,
+        // },
         // {
         //   path: '/info',
         //   element: <Info />,
         // },
-        // {
-        //   path: '/success',
-        //   element: <SuccessPage />,
-        // },
-        // {
-        //   path: '/cancel',
-        //   element: <CancelPage />,
-        // },
-        // {
-        //   path: '*',
-        //   element: <NotFoundPage />,
-        // },
+        {
+          path: '/success',
+          element: <SuccessPage />,
+        },
+        {
+          path: '/cancel',
+          element: <CancelPage />,
+        },
+        {
+          path: '*',
+          element: <NotFoundPage />,
+        },
       ],
     },
   ],

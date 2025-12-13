@@ -1,16 +1,16 @@
 import PhotoSlider3 from '../components/PhotoSlider/PhotoSlider';
-import art1 from '../assets/art1.1.jpg';
-import rahil1 from '../assets/rahil/rahil1.1.jpg';
-import art2 from '../assets/art2.jpg';
-import art3 from '../assets/art3.jpg';
-import art4 from '../assets/art4.jpg';
-import art5 from '../assets/art5.jpg';
-import art6 from '../assets/art6.jpg';
+import art1 from '../assets/Images/art1.1.jpg';
+import rahil1 from '../assets/Images/rahil/rahil1.1.jpg';
+import art2 from '../assets/Images/art2.jpg';
+import art3 from '../assets/Images/art3.jpg';
+import art4 from '../assets/Images/art4.jpg';
+import art5 from '../assets/Images/art5.jpg';
+import art6 from '../assets/Images/art6.jpg';
 
 const Home = () => {
   return (
     <div
-      className="bg-[#e6e6e6]"
+      className="bg-[#ffffff]"
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -21,7 +21,7 @@ const Home = () => {
     >
       {/* <img src="/src/assets/art1.1.jpg" alt="" /> */}
       <div
-        className="flex items-center justify-center bg-[#dbdbdb]"
+        className="flex items-center justify-center bg-[#ffffff]"
         style={{ padding: '1rem', width: '100%' }}
       >
         <img

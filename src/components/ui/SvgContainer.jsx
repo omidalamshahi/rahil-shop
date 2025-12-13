@@ -7,6 +7,7 @@ const SvgContainer = ({
   size,
   containerWidth,
   containerStyle,
+  containerClass,
   onClick,
 }) => {
   const [selectedPath, setSelectedPath] = useState('');
@@ -137,7 +138,7 @@ const SvgContainer = ({
 
   return (
     <div
-      className="svg-container-container"
+      className={('svg-container-container', containerClass)}
       style={{
         display: 'flex',
         justifyContent: 'center',
