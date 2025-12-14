@@ -4,7 +4,7 @@ import SvgContainer from '../../components/ui/SvgContainer';
 import { addToCartAction, removeCartItemAction } from '../../store/action';
 import PhotoSliderSmall from '../../components/PhotoSlider/PhotoSliderSmall';
 import HoverCycler from '../../components/ui/HoverCycler';
-import Product from './product';
+import Product from './ProductsItem';
 import PopUp from '../../components/layouts/PopUp';
 
 // fix
