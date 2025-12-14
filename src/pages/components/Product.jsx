@@ -49,10 +49,6 @@ const Product = ({ item, close }) => {
       />
       <div
         key={item.id}
-        style={{
-          boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px',
-          boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 4.6px -2px',
-        }}
         className="m-auto w-[80%] max-h-[calc(100vh-75px)]
          bg-white rounded-[5px] shadow-md overflow-hidden flex flex-col
          sm:flex-row

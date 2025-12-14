@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import SvgContainer from '../../components/ui/SvgContainer';
 import { addToCartAction, removeCartItemAction } from '../../store/action';
@@ -5,7 +6,6 @@ import PhotoSliderSmall from '../../components/PhotoSlider/PhotoSliderSmall';
 import HoverCycler from '../../components/ui/HoverCycler';
 import Product from './product';
 import PopUp from '../../components/layouts/PopUp';
-import { useState } from 'react';
 
 // fix
 const itemInventory = 20;
