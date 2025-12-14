@@ -25,17 +25,18 @@ const Header = () => {
     <>
       <div className={'sticky w-full z-999 top-0'}>
         <div
-          className="text-black bg-[#f6f6f6] flex items-center"
-          // className="text-black bg-[#c3ccd4] flex items-center"
+          // className="text-black  flex items-center"
+          className="text-black bg-[#ffffffdb] flex items-center"
           style={{
             gap: '2rem',
             height: '3rem',
-            fontWeight: '400',
+            fontWeight: '300',
             fontSize: '14px',
             color: 'rgb(0, 0, 0)',
             letterSpacing: '0.1rem',
             textTransform: 'uppercase',
             userSelect: 'none',
+            borderBottom:'1px solid #8c8c8c'
           }}
         >
           <div className="flex-1"></div>
@@ -63,8 +64,8 @@ const Header = () => {
           >
             {cartLength !== 0 && (
               <>
-                <SvgContainer icon={'Cart'} size={'1.1rem'} />
-                <span className="font-semibold text-[#545454]">
+                <SvgContainer icon={'Cart2'} size={'1.1rem'} />
+                <span className="font-[400] text-[12px] text-[#000000]">
                   {cartLength}
                 </span>
               </>

@@ -13,8 +13,6 @@ const PhotoSliderSmall = ({
   startingIndex = 0,
   onImageClick,
 }) => {
-  console.log(imgList);
-  console.log(imgListSmall);
   const changeIndex = (state, action) => {
     switch (action.type) {
       case ACTIONS.INC:
@@ -29,7 +27,7 @@ const PhotoSliderSmall = ({
   };
   const [curIndex, changeCurIndex] = useReducer(changeIndex, startingIndex);
   return (
-    <div className="group relative overflow-hidden">
+    <div id='photoslidersmall' className="group relative overflow-hidden">
       <img
         src={imgList[curIndex]}
         className="w-full h-130 object-cover m-auto"
@@ -39,36 +37,10 @@ const PhotoSliderSmall = ({
       />
       {Object.keys(imgList).length > 0 && (
         <>
-          {/* <div
-            className="absolute top-0 left-0 text-[#f7f7f7] w-[50%] h-full flex items-center justify-start z-202 cursor-pointer"
-            onClick={() => {
-              changeCurIndex({ type: ACTIONS.DEC });
-            }}
-          >
-            <SvgContainer
-              icon="ArrowLeft"
-              size="3rem"
-              className={'bg-[#00000036] rounded-[5px]'}
-            />
-          </div>
-
-          <div
-            className="absolute top-0 right-0 text-[#f7f7f7] w-[50%] h-full flex items-center justify-end z-202 cursor-pointer"
-            onClick={() => {
-              changeCurIndex({ type: ACTIONS.INC });
-            }}
-          >
-            <SvgContainer
-              icon="ArrowRight"
-              size="3rem"
-              className={'bg-[#00000036] rounded-[5px]'}
-            />
-          </div> */}
-
           <div
             id="slider"
-            className="flex justify-center items-center w-full bottom-0  transition-all duration-300 bg-[#ffffffb0] p-2 
-            gap-1
+            className="flex justify-center items-center w-full bottom-0  transition-all duration-300 bg-[#ffffffb0] pt-0.5 
+            gap-0.5
             group-hover:opacity-100 group-hover:translate-y-0 z-203
             "
           >

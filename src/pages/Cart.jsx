@@ -79,13 +79,10 @@ const Cart = ({ setShow }) => {
   };
   return (
     <div
-      className="fixed flex flex-col w-120 max-w-[90vw] right-0 z-1000 bg-[#f1f1f1e9] shadow-md max-h-[calc(100vh-3rem)] px-4 py-2 gap-2 overflow-auto mt-2 rounded-[5px]"
+      className="simple-border fixed flex flex-col w-120 max-w-[90vw] right-0 z-1000 bg-[#ffffffeb] max-h-[calc(100vh-3rem)] px-4 py-2 gap-2 overflow-auto mt-2 "
       // style={{ backdropFilter: 'blur(5px)' }}
     >
-      <button
-        className="absolute top-2 right-2 bg-[#ff6a6a] rounded-[5px]"
-        onClick={close}
-      >
+      <button className="absolute top-2 right-2 " onClick={close}>
         <SvgContainer icon={'Cancel2'} size={'1.5rem'} />
       </button>
       <div className="font-semibold text-[1.3rem] px-1">You Cart</div>
@@ -96,7 +93,7 @@ const Cart = ({ setShow }) => {
           return (
             <div
               key={id}
-              className="bg-[#ffffffdc] rounded-[5px] overflow-hidden p-4 flex gap-4"
+              className="simple-border bg-[#ffffff] overflow-hidden p-4 flex gap-4"
             >
               <img
                 src={item.imgList[0]}
@@ -113,10 +110,10 @@ const Cart = ({ setShow }) => {
                   </div>
                 </div>
                 {/* <div className="p-4 pt-4 flex justify-end gap-5 select-none "> */}
-                <div className="p-4 pt-4 ml-auto flex flex-wrap gap-5 select-none">
+                {/* <div className="p-4 pt-4 ml-auto flex flex-wrap gap-5 select-none">
                   <div className="flex items-center gap-0 py-2 text-center ">
                     <button
-                      className="bg-[#eeeeee] rounded-[5px] p-0.5"
+                      className="bg-[#eeeeee] p-0.5"
                       onClick={() => {
                         editCart({
                           id: id,
@@ -130,7 +127,7 @@ const Cart = ({ setShow }) => {
                       {itemCartQuantity}
                     </div>
                     <button
-                      className="bg-[#e9e9e9] rounded-[5px]  p-0.5"
+                      className="bg-[#e9e9e9]  p-0.5"
                       onClick={() => {
                         editCart({
                           id: id,
@@ -151,6 +148,43 @@ const Cart = ({ setShow }) => {
                     <SvgContainer icon={'CartRemove'} size={'1rem'} />
                     <span>Remove</span>
                   </button>
+                </div> */}
+                <div className="mt-auto pt-4 flex justify-around select-none">
+                  <div className="flex items-center gap-3 text-center">
+                    <button
+                      className="w-4 h-4"
+                      onClick={() => {
+                        editCart({
+                          quantity: itemCartQuantity + -1,
+                        });
+                      }}
+                    >
+                      <SvgContainer icon={'Minus1'} size={'12px'} />
+                    </button>
+                    <div className="w-6 h-6 text-center">
+                      {itemCartQuantity}
+                    </div>
+                    <button
+                      className="w-4 h-4"
+                      onClick={() => {
+                        editCart({
+                          quantity: itemCartQuantity + +1,
+                        });
+                      }}
+                    >
+                      <SvgContainer icon={'Plus1'} size={'12px'} />
+                    </button>
+                  </div>
+                  <button
+                    onClick={() => {
+                      removeFromCart(item);
+                    }}
+                    className="simple-border flex gap-2 bg-[#ffffff] text-center px-4 py-1.5 hover:opacity-90 "
+                  >
+                    <span className="text-[13px] font-[200]">
+                      Remove From Cart
+                    </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -166,7 +200,7 @@ const Cart = ({ setShow }) => {
         </div>
         <button
           onClick={checkout}
-          className="flex gap-2 bg-[#ffffff] px-4 py-2 rounded-[5px] font-semibold hover:opacity-90"
+          className="flex gap-2 bg-[#ffffff] px-4 py-2 font-semibold hover:opacity-90"
         >
           <SvgContainer icon={'Checkout'} size={'1.2rem'} />
           <span className="">Checkout</span>

@@ -40,12 +40,12 @@ const PhotoSlider2 = ({ imgList, startingIndex = 0 }) => {
         return (
           <img
             src={item}
-            className="w-full h-[80%] object-cover m-auto"
+            className="w-full h-[80%] object-contain m-auto"
           />
         );
       })}
 
-      {Object.keys(imgList).length > 1 && (
+      {/* {Object.keys(imgList).length > 1 && (
         <div>
           <div
             className="absolute top-0 left-0 text-[#f7f7f7] w-[50%] h-full flex items-center justify-start z-202 cursor-pointer"
@@ -94,7 +94,7 @@ const PhotoSlider2 = ({ imgList, startingIndex = 0 }) => {
             })}
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
